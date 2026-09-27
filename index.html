@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>chupchoet.all</title>
+    <meta
+      name="description"
+      content="Trang tổng hợp full page cho chupchoet.digital, chupchoet.cameras và chupchoet.rooms."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+      media="print" onload="this.media='all'"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+      media="print" onload="this.media='all'"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Thanh điều hướng">
+      <a class="logo brand-logo" href="#" aria-label="chupchoet.all">
+        <span class="camera-icon" aria-hidden="true"><span></span></span>
+        <span class="logo-text">chupchoet.all</span>
+      </a>
+    </header>
+
+    <main>
+
+      <section class="link-stage" aria-label="Danh sách website">
+        <a id="digital" class="destination destination-digital" href="https://example.com" target="_blank" rel="noreferrer">
+          <span class="destination-index">01</span>
+          <span class="destination-copy">
+            <strong>chupchoet.digital</strong>
+            <small>Thuê máy ảnh, lens và phụ kiện.</small>
+          </span>
+          <span class="destination-action">Open</span>
+        </a>
+
+        <a id="cameras" class="destination destination-cameras" href="https://example.org" target="_blank" rel="noreferrer">
+          <span class="destination-index">02</span>
+          <span class="destination-copy">
+            <strong>chupchoet.cameras</strong>
+            <small>Máy ảnh cũ, chất lượng cao.</small>
+          </span>
+          <span class="destination-action">Open</span>
+        </a>
+
+        <a id="rooms" class="destination destination-rooms" href="https://example.net" target="_blank" rel="noreferrer">
+          <span class="destination-index">03</span>
+          <span class="destination-copy">
+            <strong>chupchoet.rooms</strong>
+            <small>Phòng chụp chuyên nghiệp.</small>
+          </span>
+          <span class="destination-action">Open</span>
+        </a>
+      </section>
+
+      <section class="photo-collage" aria-label="Bộ ảnh trang trí lấy từ public của Rush">
+        <div class="collage-heading">
+          <p class="kicker">Public Rush archive</p>
+          <h2></h2>
+        </div>
+
+        <div class="collage-board">
+          <figure class="art-photo collage-main">
+            <img
+              src="https://raw.githubusercontent.com/maisonxw/rush/main/public/camera1.jpg"
+              alt="Máy ảnh chupchoet"
+            />
+          </figure>
+          <figure class="art-photo collage-left">
+            <img
+              src="https://raw.githubusercontent.com/maisonxw/rush/main/public/camera2.jpg"
+              alt="Máy ảnh film tông tối"
+            />
+          </figure>
+          <figure class="art-photo collage-right">
+            <img
+              src="https://raw.githubusercontent.com/maisonxw/rush/main/public/camera3.jpg"
+              alt="Máy ảnh trong bộ ảnh Rush"
+            />
+          </figure>
+          <figure class="art-photo collage-low-left">
+            <img
+              src="https://raw.githubusercontent.com/maisonxw/rush/main/public/IMG_0316.JPG"
+              alt="Ảnh sản phẩm từ Rush"
+            />
+          </figure>
+          <figure class="art-photo collage-low-right">
+            <img
+              src="https://raw.githubusercontent.com/maisonxw/rush/main/public/IMG_1291.JPG"
+              alt="Ảnh máy ảnh nghệ thuật"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="gallery-strip" aria-label="Dải ảnh trang trí phụ">
+        <figure class="strip-photo tall">
+          <img
+            src="https://raw.githubusercontent.com/maisonxw/rush/main/public/094cb8ba-a82f-41a6-9e60-da419b25b57f.jpeg"
+            alt="Chi tiết máy ảnh"
+          />
+        </figure>
+        <figure class="strip-photo wide">
+          <img
+            src="https://raw.githubusercontent.com/maisonxw/rush/main/public/741d6215-9b47-4e9e-9a88-2ef8d6e93d92.jpeg"
+            alt="Ảnh sản phẩm từ public Rush"
+          />
+        </figure>
+        <figure class="strip-photo tall">
+          <img
+            src="https://raw.githubusercontent.com/maisonxw/rush/main/public/7b638d26-ef1a-41ae-b8a3-539ece5c3acb.jpeg"
+            alt="Ảnh máy ảnh nổi bật"
+          />
+        </figure>
+        <figure class="strip-photo square">
+          <img
+            src="https://raw.githubusercontent.com/maisonxw/rush/main/public/e9586cd4-c844-4748-8823-cae366c745e6.jpeg"
+            alt="Ảnh trang trí từ Rush"
+          />
+        </figure>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>chupchoet.all</span>
+      <span>2026</span>
+    </footer>
+    <script>
+      // Wait for fonts to load before showing content
+      document.fonts.ready.then(() => {
+        document.body.style.opacity = '1';
+      });
+      
+      const header = document.querySelector(".site-header")
+      let lastScrollY = window.scrollY
+
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY
+        const isScrollingDown = currentScrollY > lastScrollY
+
+        header.classList.toggle("is-hidden", isScrollingDown && currentScrollY > 80)
+        lastScrollY = currentScrollY
+      })
+    </script>
+  </body>
+</html>
