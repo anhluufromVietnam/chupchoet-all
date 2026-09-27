@@ -1,12 +1,14 @@
 :root {
-  --ink: #111111;
-  --paper: #fff6e9;
-  --yellow: #ffd400;
-  --pink: #ff5da2;
-  --cyan: #4fe0ff;
-  --lime: #c8f14e;
-  --orange: #ff7a1a;
-  --border-w: 3px;
+  --ink: #59263c;
+  --muted: #8a5a6e;
+  --paper: #fff5f9;
+  --cream: #fffafc;
+  --blush: #ffd9e8;
+  --rose: #ff8fbf;
+  --hot: #ff4d94;
+  --deep: #d6336c;
+  --lavender: #e8dcff;
+  --peach: #ffe8d9;
 }
 
 * {
@@ -24,7 +26,12 @@ html {
 
 body {
   min-height: 100vh;
-  background: var(--paper);
+  background:
+    radial-gradient(circle at 12% 8%, rgb(255 143 191 / 0.2), transparent 42%),
+    radial-gradient(circle at 88% 26%, rgb(232 220 255 / 0.32), transparent 48%),
+    radial-gradient(circle at 50% 90%, rgb(255 216 224 / 0.4), transparent 55%),
+    linear-gradient(180deg, #fff5f9 0%, #ffe9f2 100%);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: "Be Vietnam Pro", Arial, sans-serif;
   overflow-x: hidden;
@@ -59,8 +66,9 @@ img {
   justify-content: space-between;
   gap: 16px;
   padding: 14px 24px;
-  background: var(--paper);
-  border-bottom: var(--border-w) solid var(--ink);
+  background: rgb(255 250 252 / 0.82);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgb(255 143 191 / 0.35);
   transition: transform 0.28s ease, opacity 0.28s ease;
   will-change: transform;
 }
@@ -73,49 +81,52 @@ img {
 
 .logo {
   display: inline-block;
-  background: var(--ink);
-  color: var(--paper);
-  padding: 6px 14px;
-  font-family: "Archivo Black", "Be Vietnam Pro", sans-serif;
+  background: linear-gradient(135deg, var(--hot), var(--deep));
+  color: var(--cream);
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
   font-size: clamp(18px, 2.6vw, 26px);
   line-height: 1.2;
-  box-shadow: 4px 4px 0 var(--pink);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 10px 26px rgb(255 77 148 / 0.35);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
 .logo:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--pink);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgb(255 77 148 / 0.45);
 }
 
 .header-tag {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 12px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-align: right;
+  color: var(--muted);
 }
 
 /* Ticker */
 
 .ticker {
   overflow: hidden;
-  background: var(--ink);
-  color: var(--paper);
-  border-bottom: var(--border-w) solid var(--ink);
+  background: linear-gradient(90deg, var(--hot), var(--deep), var(--hot));
+  color: var(--cream);
 }
 
 .ticker-track {
   display: flex;
   width: max-content;
-  animation: ticker-scroll 24s linear infinite;
+  animation: ticker-scroll 26s linear infinite;
 }
 
 .ticker-track span {
   padding: 10px 0;
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -129,40 +140,42 @@ img {
 /* Hero */
 
 .hero {
-  padding: 72px 0 48px;
+  padding: 76px 0 48px;
 }
 
 .kicker {
   display: inline-block;
-  background: var(--lime);
-  border: var(--border-w) solid var(--ink);
-  box-shadow: 4px 4px 0 var(--ink);
-  padding: 8px 14px;
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 0.14em;
+  background: var(--cream);
+  border: 1.5px solid var(--rose);
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgb(255 77 148 / 0.16);
+  padding: 9px 18px;
+  color: var(--deep);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  transform: rotate(-2deg);
 }
 
 h1 {
   margin: 30px 0 0;
-  font-family: "Archivo Black", "Be Vietnam Pro", sans-serif;
-  font-size: clamp(56px, 11vw, 150px);
-  font-weight: 400;
-  line-height: 0.94;
-  text-transform: uppercase;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(54px, 10vw, 138px);
+  font-weight: 600;
+  line-height: 1.02;
   letter-spacing: -0.01em;
+  color: var(--ink);
   overflow-wrap: break-word;
 }
 
 .hero-accent {
   display: inline-block;
-  background: var(--yellow);
-  border: var(--border-w) solid var(--ink);
-  box-shadow: 8px 8px 0 var(--ink);
-  padding: 0 20px;
-  transform: rotate(-1.5deg);
+  background: linear-gradient(135deg, var(--blush), var(--rose));
+  color: var(--cream);
+  border-radius: 28px;
+  padding: 0 26px;
+  transform: rotate(-2deg);
+  box-shadow: 0 18px 40px rgb(255 77 148 / 0.3);
 }
 
 .hero-sub {
@@ -170,12 +183,16 @@ h1 {
   margin-top: 30px;
   font-size: clamp(16px, 2vw, 20px);
   font-weight: 500;
-  line-height: 1.7;
+  line-height: 1.75;
+  color: var(--muted);
 }
 
 .hero-sub strong {
-  background: var(--cyan);
-  padding: 0 6px;
+  background: var(--blush);
+  color: var(--deep);
+  padding: 1px 8px;
+  border-radius: 8px;
+  font-weight: 700;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
@@ -188,9 +205,12 @@ h1 {
 }
 
 .badge {
-  border: var(--border-w) solid var(--ink);
-  box-shadow: 5px 5px 0 var(--ink);
-  padding: 10px 18px;
+  background: var(--cream);
+  border: 1.5px solid var(--rose);
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgb(255 77 148 / 0.18);
+  padding: 11px 22px;
+  color: var(--deep);
   font-weight: 800;
   font-size: 14px;
   letter-spacing: 0.1em;
@@ -198,17 +218,17 @@ h1 {
 }
 
 .badge-yellow {
-  background: var(--yellow);
+  background: linear-gradient(135deg, #fff0f7, var(--blush));
   transform: rotate(-2deg);
 }
 
 .badge-pink {
-  background: var(--pink);
+  background: linear-gradient(135deg, var(--lavender), #d9c8ff);
   transform: rotate(1.5deg);
 }
 
 .badge-cyan {
-  background: var(--cyan);
+  background: linear-gradient(135deg, #fff3ea, var(--peach));
   transform: rotate(-1deg);
 }
 
@@ -222,44 +242,46 @@ h1 {
 
 .stage-heading h2 {
   margin-top: 18px;
-  font-family: "Archivo Black", "Be Vietnam Pro", sans-serif;
-  font-size: clamp(30px, 5vw, 60px);
-  font-weight: 400;
-  line-height: 1;
-  text-transform: uppercase;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(30px, 5vw, 58px);
+  font-weight: 600;
+  line-height: 1.08;
+  color: var(--ink);
   overflow-wrap: break-word;
+}
+
+.stage-heading h2::after {
+  content: " ♡";
+  color: var(--hot);
 }
 
 .destination {
   position: relative;
   display: grid;
   gap: 18px;
-  border: var(--border-w) solid var(--ink);
-  box-shadow: 10px 10px 0 var(--ink);
-  padding: 28px;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  border: 1.5px solid rgb(255 143 191 / 0.55);
+  border-radius: 32px;
+  box-shadow: 0 24px 52px rgb(214 51 108 / 0.14);
+  padding: 32px;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
 
 .destination:hover {
-  transform: translate(-5px, -5px);
-  box-shadow: 15px 15px 0 var(--ink);
-}
-
-.destination:active {
-  transform: translate(3px, 3px);
-  box-shadow: 4px 4px 0 var(--ink);
+  transform: translateY(-6px);
+  border-color: var(--rose);
+  box-shadow: 0 34px 68px rgb(214 51 108 / 0.24);
 }
 
 .destination-digital {
-  background: var(--yellow);
+  background: linear-gradient(135deg, #fff0f7 0%, var(--blush) 100%);
 }
 
 .destination-cameras {
-  background: var(--pink);
+  background: linear-gradient(135deg, #f6efff 0%, var(--lavender) 100%);
 }
 
 .destination-rooms {
-  background: var(--cyan);
+  background: linear-gradient(135deg, #fff4ec 0%, var(--peach) 100%);
 }
 
 .destination-top {
@@ -270,34 +292,34 @@ h1 {
 }
 
 .destination-index {
-  font-family: "Archivo Black", "Be Vietnam Pro", sans-serif;
-  font-size: clamp(40px, 6vw, 72px);
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(44px, 6vw, 76px);
   line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 3px var(--ink);
+  color: rgb(214 51 108 / 0.32);
 }
 
 .destination-tag {
   display: inline-block;
-  background: var(--ink);
-  color: var(--paper);
-  padding: 8px 14px;
+  background: linear-gradient(135deg, var(--hot), var(--deep));
+  color: var(--cream);
+  border-radius: 999px;
+  padding: 10px 20px;
   font-weight: 800;
   font-size: 13px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  transform: rotate(2deg);
-  box-shadow: 4px 4px 0 rgb(255 255 255 / 0.9);
+  box-shadow: 0 10px 24px rgb(255 77 148 / 0.4);
   white-space: nowrap;
 }
 
 .destination-copy strong {
   display: block;
-  font-family: "Archivo Black", "Be Vietnam Pro", sans-serif;
-  font-size: clamp(30px, 5.5vw, 64px);
-  font-weight: 400;
-  line-height: 1.05;
-  text-transform: lowercase;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(30px, 5.5vw, 62px);
+  font-weight: 600;
+  line-height: 1.08;
+  color: var(--ink);
   overflow-wrap: break-word;
 }
 
@@ -306,28 +328,30 @@ h1 {
   max-width: 620px;
   margin-top: 12px;
   font-size: clamp(14px, 1.6vw, 18px);
-  font-weight: 600;
-  line-height: 1.6;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--muted);
   overflow-wrap: break-word;
 }
 
 .destination-action {
   justify-self: start;
   display: inline-block;
-  background: var(--ink);
-  color: var(--paper);
-  padding: 14px 22px;
+  background: linear-gradient(135deg, var(--hot), var(--deep));
+  color: var(--cream);
+  border-radius: 999px;
+  padding: 15px 28px;
   font-weight: 800;
   font-size: 14px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  box-shadow: 5px 5px 0 rgb(255 255 255 / 0.85);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 14px 30px rgb(255 77 148 / 0.4);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
 .destination:hover .destination-action {
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 rgb(255 255 255 / 0.85);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 20px 40px rgb(255 77 148 / 0.5);
 }
 
 /* Collage */
@@ -346,32 +370,41 @@ h1 {
 
 .collage-heading h2 {
   max-width: 660px;
-  font-family: "Archivo Black", "Be Vietnam Pro", sans-serif;
-  font-size: clamp(26px, 4.5vw, 54px);
-  font-weight: 400;
-  line-height: 1;
-  text-transform: uppercase;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(26px, 4.5vw, 52px);
+  font-weight: 600;
+  line-height: 1.08;
+  color: var(--ink);
   text-align: right;
   overflow-wrap: break-word;
+}
+
+.collage-heading h2::before {
+  content: "✧ ";
+  color: var(--hot);
 }
 
 .collage-board {
   position: relative;
   min-height: 680px;
-  border: var(--border-w) solid var(--ink);
-  background: var(--lime);
-  box-shadow: 10px 10px 0 var(--ink);
+  border: 1.5px solid rgb(255 143 191 / 0.5);
+  border-radius: 40px;
+  background-color: var(--blush);
+  background-image: radial-gradient(rgb(255 255 255 / 0.6) 2.5px, transparent 3px);
+  background-size: 28px 28px;
+  box-shadow: 0 30px 70px rgb(214 51 108 / 0.18), inset 0 1px 0 rgb(255 255 255 / 0.7);
   overflow: hidden;
 }
 
 .art-photo {
   position: absolute;
   margin: 0;
-  border: var(--border-w) solid var(--ink);
-  box-shadow: 8px 8px 0 var(--ink);
-  background: var(--paper);
+  border: 8px solid var(--cream);
+  border-radius: 20px;
+  box-shadow: 0 26px 54px rgb(214 51 108 / 0.26);
+  background: var(--cream);
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, z-index 0s linear 0.1s;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, z-index 0s linear 0.1s;
 }
 
 .art-photo img,
@@ -384,7 +417,7 @@ h1 {
 
 .art-photo:hover {
   z-index: 8;
-  box-shadow: 12px 12px 0 var(--ink);
+  box-shadow: 0 34px 68px rgb(214 51 108 / 0.36);
 }
 
 .collage-main {
@@ -464,17 +497,18 @@ h1 {
 
 .strip-photo {
   margin: 0;
-  border: var(--border-w) solid var(--ink);
-  box-shadow: 8px 8px 0 var(--ink);
-  background: var(--paper);
+  border: 8px solid var(--cream);
+  border-radius: 20px;
+  box-shadow: 0 24px 50px rgb(214 51 108 / 0.24);
+  background: var(--cream);
   overflow: hidden;
   aspect-ratio: 4 / 3;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
 .strip-photo:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 12px 12px 0 var(--ink);
+  transform: translateY(-8px);
+  box-shadow: 0 32px 62px rgb(214 51 108 / 0.32);
 }
 
 .strip-photo.tall {
@@ -496,12 +530,12 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 12px;
-  background: var(--ink);
-  color: var(--paper);
-  padding: 20px 24px;
-  font-weight: 800;
+  background: linear-gradient(135deg, var(--deep), var(--hot));
+  color: var(--cream);
+  padding: 22px 28px;
+  font-weight: 700;
   font-size: 13px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -517,11 +551,11 @@ h1 {
   }
 
   .destination {
-    padding: 24px;
+    padding: 26px;
   }
 
   .destination-copy strong {
-    font-size: clamp(28px, 6vw, 64px);
+    font-size: clamp(28px, 6vw, 62px);
   }
 
   .collage-heading {
@@ -559,34 +593,28 @@ h1 {
   }
 
   .hero-accent {
-    box-shadow: 5px 5px 0 var(--ink);
-    padding: 0 12px;
+    padding: 0 16px;
+    border-radius: 22px;
   }
 
   .destination {
-    padding: 20px;
+    padding: 22px;
     gap: 14px;
-    box-shadow: 6px 6px 0 var(--ink);
-  }
-
-  .destination:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 9px 9px 0 var(--ink);
+    border-radius: 26px;
   }
 
   .destination-index {
-    font-size: 36px;
-    -webkit-text-stroke: 2px var(--ink);
+    font-size: 38px;
   }
 
   .destination-tag {
     font-size: 11px;
-    padding: 6px 10px;
+    padding: 8px 14px;
   }
 
   .destination-copy strong {
     font-size: clamp(26px, 7.5vw, 46px);
-    line-height: 1.1;
+    line-height: 1.12;
   }
 
   .destination-copy small {
@@ -596,13 +624,13 @@ h1 {
   }
 
   .destination-action {
-    padding: 12px 18px;
+    padding: 13px 22px;
     font-size: 12px;
   }
 
   .collage-board {
     min-height: 460px;
-    box-shadow: 6px 6px 0 var(--ink);
+    border-radius: 30px;
   }
 
   .collage-main {
