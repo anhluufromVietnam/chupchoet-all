@@ -201,6 +201,35 @@ h1 {
   white-space: nowrap;
 }
 
+.destination-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.destination-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1.5px solid var(--rose);
+  box-shadow: 0 10px 22px rgb(255 77 148 / 0.22);
+  color: var(--deep);
+  flex-shrink: 0;
+  transition: transform 0.24s ease;
+}
+
+.destination-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.destination:hover .destination-icon {
+  transform: rotate(-8deg) scale(1.06);
+}
+
 .destination-copy strong {
   display: block;
   font-family: "Playfair Display", Georgia, serif;
@@ -465,6 +494,20 @@ h1 {
   .destination-tag {
     font-size: 11px;
     padding: 8px 14px;
+  }
+
+  .destination-meta {
+    gap: 10px;
+  }
+
+  .destination-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .destination-icon svg {
+    width: 22px;
+    height: 22px;
   }
 
   .destination-copy strong {
