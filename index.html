@@ -3,69 +3,99 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>chupchoet.all</title>
+    <title>chupchoet.all — Thuê máy ảnh, mua máy cũ, thuê phòng chụp</title>
     <meta
       name="description"
-      content="Trang tổng hợp full page cho chupchoet.digital, chupchoet.cameras và chupchoet.rooms."
+      content="Ba dịch vụ, một nơi: thuê máy ảnh, mua máy ảnh cũ chất lượng cao và thuê phòng chụp chuyên nghiệp."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
-      media="print" onload="this.media='all'"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-      media="print" onload="this.media='all'"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" aria-label="Thanh điều hướng">
-      <a class="logo brand-logo" href="#" aria-label="chupchoet.all">
-        <span class="camera-icon" aria-hidden="true"><span></span></span>
-        <span class="logo-text">chupchoet.all</span>
-      </a>
+      <a class="logo" href="#" aria-label="chupchoet.all">chupchoet.all</a>
+      <p class="header-tag">Thuê máy · Mua máy cũ · Thuê phòng</p>
     </header>
 
-    <main>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>THUÊ MÁY ẢNH ✦ MUA MÁY CŨ ✦ THUÊ PHÒNG CHỤP ✦ CHUPCHOET.ALL ✦&nbsp;</span>
+        <span>THUÊ MÁY ẢNH ✦ MUA MÁY CŨ ✦ THUÊ PHÒNG CHỤP ✦ CHUPCHOET.ALL ✦&nbsp;</span>
+      </div>
+    </div>
 
-      <section class="link-stage" aria-label="Danh sách website">
-        <a id="digital" class="destination destination-digital" href="https://example.com" target="_blank" rel="noreferrer">
-          <span class="destination-index">01</span>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <p class="kicker">Hệ sinh thái chupchoet</p>
+        <h1 id="page-title">
+          Chúp.<br />
+          Chọt.<br />
+          <span class="hero-accent">Xong.</span>
+        </h1>
+        <p class="hero-sub">
+          Ba dịch vụ, một nơi: <strong>thuê máy ảnh</strong>,
+          <strong>mua máy cũ</strong> và <strong>thuê phòng chụp</strong>.
+          Chọn một, bắt đầu ngay.
+        </p>
+        <div class="hero-badges" aria-label="Ba dịch vụ chính">
+          <span class="badge badge-yellow">Thuê máy</span>
+          <span class="badge badge-pink">Mua máy cũ</span>
+          <span class="badge badge-cyan">Thuê phòng</span>
+        </div>
+      </section>
+
+      <section class="link-stage" aria-label="Ba dịch vụ của chupchoet">
+        <div class="stage-heading">
+          <p class="kicker">Chọn đi</p>
+          <h2>Ba dịch vụ, một nơi.</h2>
+        </div>
+
+        <a id="digital" class="destination destination-digital" href="https://booking.chupchoet.com" target="_blank" rel="noreferrer">
+          <span class="destination-top">
+            <span class="destination-index" aria-hidden="true">01</span>
+            <span class="destination-tag">Thuê máy</span>
+          </span>
           <span class="destination-copy">
             <strong>chupchoet.digital</strong>
-            <small>Thuê máy ảnh, lens và phụ kiện.</small>
+            <small>Thuê máy ảnh, lens và phụ kiện theo giờ hoặc theo ngày.</small>
           </span>
-          <span class="destination-action">Open</span>
+          <span class="destination-action">Mở ngay →</span>
         </a>
 
-        <a id="cameras" class="destination destination-cameras" href="https://example.org" target="_blank" rel="noreferrer">
-          <span class="destination-index">02</span>
+        <a id="cameras" class="destination destination-cameras" href="https://camera.chupchoet.com" target="_blank" rel="noreferrer">
+          <span class="destination-top">
+            <span class="destination-index" aria-hidden="true">02</span>
+            <span class="destination-tag">Mua máy cũ</span>
+          </span>
           <span class="destination-copy">
             <strong>chupchoet.cameras</strong>
-            <small>Máy ảnh cũ, chất lượng cao.</small>
+            <small>Máy ảnh cũ đã kiểm định, chất lượng cao, giá tốt.</small>
           </span>
-          <span class="destination-action">Open</span>
+          <span class="destination-action">Mở ngay →</span>
         </a>
 
-        <a id="rooms" class="destination destination-rooms" href="https://example.net" target="_blank" rel="noreferrer">
-          <span class="destination-index">03</span>
+        <a id="rooms" class="destination destination-rooms" href="https://room.chupchoet.com" target="_blank" rel="noreferrer">
+          <span class="destination-top">
+            <span class="destination-index" aria-hidden="true">03</span>
+            <span class="destination-tag">Thuê phòng</span>
+          </span>
           <span class="destination-copy">
             <strong>chupchoet.rooms</strong>
-            <small>Phòng chụp chuyên nghiệp.</small>
+            <small>Phòng chụp chuyên nghiệp, sẵn sàng cho buổi shoot của bạn.</small>
           </span>
-          <span class="destination-action">Open</span>
+          <span class="destination-action">Mở ngay →</span>
         </a>
       </section>
 
       <section class="photo-collage" aria-label="Bộ ảnh trang trí lấy từ public của Rush">
         <div class="collage-heading">
           <p class="kicker">Public Rush archive</p>
-          <h2></h2>
+          <h2>Kho ảnh thật, chụp bằng máy thật.</h2>
         </div>
 
         <div class="collage-board">
@@ -132,14 +162,11 @@
 
     <footer class="site-footer">
       <span>chupchoet.all</span>
+      <span>Thuê máy · Mua máy cũ · Thuê phòng chụp</span>
       <span>2026</span>
     </footer>
+
     <script>
-      // Wait for fonts to load before showing content
-      document.fonts.ready.then(() => {
-        document.body.style.opacity = '1';
-      });
-      
       const header = document.querySelector(".site-header")
       let lastScrollY = window.scrollY
 
