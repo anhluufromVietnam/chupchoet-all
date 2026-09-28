@@ -118,12 +118,93 @@ img {
 h1 {
   margin: 0;
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(44px, 7vw, 96px);
+  font-size: clamp(34px, 7vw, 92px);
   font-weight: 600;
-  line-height: 1.14;
+  line-height: 1.06;
   letter-spacing: -0.01em;
   color: var(--ink);
   overflow-wrap: break-word;
+}
+
+.hero-line {
+  --line-accent: var(--hot);
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.6vw, 20px);
+  width: fit-content;
+  max-width: 100%;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.24s ease;
+}
+
+.hero-line + .hero-line {
+  margin-top: clamp(8px, 1.4vw, 18px);
+}
+
+.hero-line-cameras {
+  --line-accent: var(--deep);
+}
+
+.hero-num {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(26px, 3.2vw, 42px);
+  height: clamp(26px, 3.2vw, 42px);
+  border-radius: 999px;
+  border: 1.5px solid rgb(255 143 191 / 0.65);
+  background: var(--cream);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: clamp(10px, 1.1vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--deep);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-text {
+  transition: color 0.2s ease;
+}
+
+.hero-arrow {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-size: 0.42em;
+  color: var(--line-accent);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hero-line:hover,
+.hero-line:focus-visible {
+  transform: translateX(8px);
+}
+
+.hero-line:hover .hero-text:not(.hero-accent),
+.hero-line:focus-visible .hero-text:not(.hero-accent) {
+  color: var(--line-accent);
+}
+
+.hero-line:hover .hero-num,
+.hero-line:focus-visible .hero-num {
+  background: var(--line-accent);
+  border-color: var(--line-accent);
+  color: var(--cream);
+}
+
+.hero-line:hover .hero-arrow,
+.hero-line:focus-visible .hero-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-line:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 6px;
+  border-radius: 18px;
 }
 
 .hero-accent {
@@ -131,9 +212,16 @@ h1 {
   background: linear-gradient(135deg, var(--blush), var(--rose));
   color: var(--cream);
   border-radius: 28px;
-  padding: 0 26px;
+  padding: 0 clamp(16px, 2.4vw, 26px);
   transform: rotate(-2deg);
   box-shadow: 0 18px 40px rgb(255 77 148 / 0.3);
+  transition: box-shadow 0.2s ease;
+  text-wrap: balance;
+}
+
+.hero-line:hover .hero-accent,
+.hero-line:focus-visible .hero-accent {
+  box-shadow: 0 22px 48px rgb(255 77 148 / 0.45);
 }
 
 /* Services */
@@ -581,8 +669,26 @@ h1 {
   }
 
   .hero-accent {
-    padding: 0 16px;
+    padding: 0 12px;
     border-radius: 22px;
+  }
+
+  .hero-line-rooms .hero-text {
+    font-size: 0.9em;
+  }
+
+  .hero-line {
+    gap: 8px;
+  }
+
+  .hero-num {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .hero-arrow {
+    display: none;
   }
 
   .destination {
@@ -700,7 +806,12 @@ h1 {
   .art-photo,
   .strip-photo,
   .logo,
-  .destination-action {
+  .destination-action,
+  .hero-line,
+  .hero-num,
+  .hero-text,
+  .hero-arrow,
+  .hero-accent {
     transition: none;
   }
 }
