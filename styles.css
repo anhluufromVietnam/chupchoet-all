@@ -143,7 +143,11 @@ h1 {
 }
 
 .hero-line-cameras {
-  --line-accent: var(--deep);
+  --line-accent: #7c4dff;
+}
+
+.hero-line-rooms {
+  --line-accent: #ff7e5f;
 }
 
 .hero-num {
@@ -154,13 +158,13 @@ h1 {
   width: clamp(26px, 3.2vw, 42px);
   height: clamp(26px, 3.2vw, 42px);
   border-radius: 999px;
-  border: 1.5px solid rgb(255 143 191 / 0.65);
+  border: 1.5px solid color-mix(in srgb, var(--line-accent) 65%, transparent);
   background: var(--cream);
   font-family: "Be Vietnam Pro", sans-serif;
   font-size: clamp(10px, 1.1vw, 13px);
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--deep);
+  color: var(--line-accent);
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -209,37 +213,42 @@ h1 {
 
 .hero-accent {
   display: inline-block;
-  background: linear-gradient(135deg, var(--blush), var(--rose));
+  background: linear-gradient(135deg, #ffe3d3, #ffb38a);
   color: var(--cream);
   border-radius: 28px;
   padding: 0 clamp(16px, 2.4vw, 26px);
   transform: rotate(-2deg);
-  box-shadow: 0 18px 40px rgb(255 77 148 / 0.3);
+  box-shadow: 0 18px 40px rgb(255 126 95 / 0.3);
   transition: box-shadow 0.2s ease;
   text-wrap: balance;
 }
 
 .hero-line:hover .hero-accent,
 .hero-line:focus-visible .hero-accent {
-  box-shadow: 0 22px 48px rgb(255 77 148 / 0.45);
+  box-shadow: 0 22px 48px rgb(255 126 95 / 0.45);
 }
 
 /* Services */
 
 .link-stage {
   display: grid;
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 2vw, 30px);
   padding: 24px 0 72px;
 }
 
 .destination {
+  --svc-grad: linear-gradient(135deg, var(--hot), var(--deep));
+  --svc-color: var(--deep);
+  --svc-soft: var(--rose);
   position: relative;
   display: grid;
-  gap: 18px;
+  gap: clamp(10px, 1.6vw, 18px);
+  align-content: start;
   border: 1.5px solid rgb(255 143 191 / 0.55);
-  border-radius: 32px;
+  border-radius: clamp(20px, 2.6vw, 32px);
   box-shadow: 0 24px 52px rgb(214 51 108 / 0.14);
-  padding: 32px;
+  padding: clamp(12px, 2vw, 32px);
   transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
 
@@ -254,10 +263,16 @@ h1 {
 }
 
 .destination-cameras {
+  --svc-grad: linear-gradient(135deg, #b18cff, #7c4dff);
+  --svc-color: #7c4dff;
+  --svc-soft: #b18cff;
   background: linear-gradient(135deg, #f6efff 0%, var(--lavender) 100%);
 }
 
 .destination-rooms {
+  --svc-grad: linear-gradient(135deg, #ffb38a, #ff7e5f);
+  --svc-color: #ff7e5f;
+  --svc-soft: #ffb38a;
   background: linear-gradient(135deg, #fff4ec 0%, var(--peach) 100%);
 }
 
@@ -265,54 +280,55 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: clamp(8px, 1.2vw, 16px);
 }
 
 .destination-index {
   font-family: "Playfair Display", Georgia, serif;
   font-style: italic;
-  font-size: clamp(44px, 6vw, 76px);
+  font-size: clamp(24px, 3.6vw, 64px);
   line-height: 1;
   color: rgb(214 51 108 / 0.32);
 }
 
 .destination-tag {
   display: inline-block;
-  background: linear-gradient(135deg, var(--hot), var(--deep));
+  background: var(--svc-grad);
   color: var(--cream);
   border-radius: 999px;
-  padding: 10px 20px;
+  padding: clamp(5px, 0.8vw, 10px) clamp(10px, 1.4vw, 20px);
   font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 0.14em;
+  font-size: clamp(8px, 1vw, 13px);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  box-shadow: 0 10px 24px rgb(255 77 148 / 0.4);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--svc-color) 35%, transparent);
   white-space: nowrap;
 }
 
 .destination-meta {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: clamp(6px, 1vw, 12px);
 }
 
 .destination-icon {
   display: grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
+  width: clamp(30px, 4.2vw, 52px);
+  height: clamp(30px, 4.2vw, 52px);
   border-radius: 50%;
   background: var(--cream);
-  border: 1.5px solid var(--rose);
-  box-shadow: 0 10px 22px rgb(255 77 148 / 0.22);
-  color: var(--deep);
+  border: 1.5px solid var(--svc-soft);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--svc-color) 22%, transparent);
+  color: var(--svc-color);
   flex-shrink: 0;
   transition: transform 0.24s ease;
 }
 
 .destination-icon svg {
-  width: 26px;
-  height: 26px;
+  width: 50%;
+  height: 50%;
 }
 
 .destination:hover .destination-icon {
@@ -322,29 +338,21 @@ h1 {
 .destination-copy strong {
   display: block;
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(30px, 5.5vw, 62px);
+  font-size: clamp(16px, 2.4vw, 40px);
   font-weight: 600;
-  line-height: 1.08;
+  line-height: 1.12;
   color: var(--ink);
   overflow-wrap: break-word;
 }
 
 .destination-copy small {
   display: block;
-  max-width: 620px;
-  margin-top: 12px;
-  font-size: clamp(14px, 1.6vw, 18px);
+  margin-top: clamp(6px, 1vw, 12px);
+  font-size: clamp(11.5px, 1.3vw, 17px);
   font-weight: 500;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--muted);
   overflow-wrap: break-word;
-}
-
-.destination-body {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 28px;
 }
 
 .destination-copy {
@@ -352,14 +360,14 @@ h1 {
 }
 
 .destination-photo {
-  width: clamp(150px, 22vw, 230px);
-  aspect-ratio: 4 / 5;
-  border: 8px solid var(--cream);
-  border-radius: 18px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: clamp(4px, 0.7vw, 8px) solid var(--cream);
+  border-radius: clamp(12px, 1.6vw, 18px);
   background: var(--cream);
   box-shadow: 0 20px 44px rgb(214 51 108 / 0.22);
   overflow: hidden;
-  transform: rotate(2.5deg);
+  transform: rotate(2deg);
   transition: transform 0.28s ease;
 }
 
@@ -371,11 +379,11 @@ h1 {
 }
 
 .destination-cameras .destination-photo {
-  transform: rotate(-2.5deg);
+  transform: rotate(-2deg);
 }
 
 .destination-rooms .destination-photo {
-  transform: rotate(2deg);
+  transform: rotate(1.6deg);
 }
 
 .destination:hover .destination-photo {
@@ -393,8 +401,8 @@ h1 {
   background: rgb(255 255 255 / 0.8);
   border: 1px solid rgb(255 143 191 / 0.55);
   border-radius: 999px;
-  padding: 6px 14px;
-  font-size: 12.5px;
+  padding: 5px 12px;
+  font-size: clamp(9px, 1vw, 12.5px);
   font-weight: 700;
   color: var(--deep);
   white-space: nowrap;
@@ -403,15 +411,15 @@ h1 {
 .destination-action {
   justify-self: start;
   display: inline-block;
-  background: linear-gradient(135deg, var(--hot), var(--deep));
+  background: var(--svc-grad);
   color: var(--cream);
   border-radius: 999px;
-  padding: 15px 28px;
+  padding: clamp(8px, 1.2vw, 15px) clamp(14px, 2vw, 28px);
   font-weight: 800;
-  font-size: 14px;
+  font-size: clamp(9.5px, 1.1vw, 14px);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  box-shadow: 0 14px 30px rgb(255 77 148 / 0.4);
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--svc-color) 40%, transparent);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
@@ -635,14 +643,6 @@ h1 {
     padding: 48px 0 36px;
   }
 
-  .destination {
-    padding: 26px;
-  }
-
-  .destination-copy strong {
-    font-size: clamp(28px, 6vw, 62px);
-  }
-
   .collage-board {
     min-height: 560px;
   }
@@ -691,59 +691,55 @@ h1 {
     display: none;
   }
 
-  .destination {
-    padding: 22px;
-    gap: 14px;
-    border-radius: 26px;
+  .link-stage {
+    width: min(100% - 16px, 1180px);
   }
 
-  .destination-body {
-    grid-template-columns: 1fr;
-    gap: 18px;
+  .destination {
+    padding: 10px;
+    gap: 8px;
+    border-radius: 18px;
   }
 
   .destination-photo {
-    width: min(220px, 60vw);
-    justify-self: start;
+    border-width: 4px;
+    border-radius: 10px;
   }
 
   .destination-index {
-    font-size: 38px;
+    display: none;
   }
 
   .destination-tag {
-    font-size: 11px;
-    padding: 8px 14px;
+    font-size: 8px;
+    padding: 4px 8px;
+    letter-spacing: 0.05em;
   }
 
-  .destination-meta {
-    gap: 10px;
+  .destination-top {
+    justify-content: center;
   }
 
-  .destination-icon {
-    width: 44px;
-    height: 44px;
-  }
-
-  .destination-icon svg {
-    width: 22px;
-    height: 22px;
+  .destination-icon,
+  .destination-index {
+    display: none;
   }
 
   .destination-copy strong {
-    font-size: clamp(26px, 7.5vw, 46px);
-    line-height: 1.12;
+    font-size: 13px;
+    line-height: 1.2;
   }
 
-  .destination-copy small {
-    font-size: 13px;
-    line-height: 1.6;
-    margin-top: 8px;
+  .destination-copy small,
+  .destination-chips {
+    display: none;
   }
 
   .destination-action {
-    padding: 13px 22px;
-    font-size: 12px;
+    justify-self: stretch;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 9px;
   }
 
   .collage-board {
