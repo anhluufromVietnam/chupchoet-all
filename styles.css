@@ -103,7 +103,7 @@ img {
 
 .stage-kicker {
   grid-column: 1 / -1;
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   font-family: "Be Vietnam Pro", Arial, sans-serif;
   font-size: clamp(11px, 1.2vw, 14px);
   font-weight: 700;
@@ -112,11 +112,20 @@ img {
   color: var(--muted);
 }
 
+.stage-sub {
+  grid-column: 1 / -1;
+  margin: 0 0 12px;
+  font-size: clamp(12.5px, 1.5vw, 17px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
 .link-stage {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(10px, 2vw, 30px);
-  padding: 36px 0 72px;
+  padding: 44px 0 84px;
 }
 
 .destination {
@@ -130,7 +139,7 @@ img {
   border: 1.5px solid rgb(255 143 191 / 0.55);
   border-radius: clamp(20px, 2.6vw, 32px);
   box-shadow: 0 24px 52px rgb(214 51 108 / 0.14);
-  padding: clamp(12px, 2vw, 32px);
+  padding: clamp(12px, 2.2vw, 34px);
   transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
 
@@ -215,6 +224,14 @@ img {
   line-height: 1.4;
   color: color-mix(in srgb, var(--svc-color) 55%, var(--muted));
   overflow-wrap: break-word;
+}
+
+.destination-desc {
+  display: block;
+  margin-top: clamp(5px, 0.7vw, 9px);
+  font-size: clamp(9.5px, 1.05vw, 13.5px);
+  line-height: 1.45;
+  color: var(--muted);
 }
 
 .destination-copy {
@@ -524,7 +541,7 @@ img {
 
   .link-stage {
     width: min(100% - 16px, 1180px);
-    padding: 12px 0 48px;
+    padding: 10px 0 40px;
   }
 
   .destination {
@@ -616,6 +633,10 @@ img {
 @media (max-width: 360px) {
   .destination-copy strong {
     font-size: 11px;
+  }
+
+  .destination-desc {
+    font-size: 9px;
   }
 
   .destination-action {
