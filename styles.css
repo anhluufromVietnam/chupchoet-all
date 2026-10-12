@@ -100,15 +100,6 @@ img {
   box-shadow: 0 14px 32px rgb(255 77 148 / 0.45);
 }
 
-.header-tag {
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  text-align: right;
-  color: var(--muted);
-}
-
 /* Hero */
 
 .hero {
@@ -289,27 +280,7 @@ h1 {
   font-style: italic;
   font-size: clamp(24px, 3.6vw, 64px);
   line-height: 1;
-  color: rgb(214 51 108 / 0.32);
-}
-
-.destination-tag {
-  display: inline-block;
-  background: var(--svc-grad);
-  color: var(--cream);
-  border-radius: 999px;
-  padding: clamp(5px, 0.8vw, 10px) clamp(10px, 1.4vw, 20px);
-  font-weight: 800;
-  font-size: clamp(8px, 1vw, 13px);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  box-shadow: 0 10px 24px color-mix(in srgb, var(--svc-color) 35%, transparent);
-  white-space: nowrap;
-}
-
-.destination-meta {
-  display: flex;
-  align-items: center;
-  gap: clamp(6px, 1vw, 12px);
+  color: color-mix(in srgb, var(--svc-color) 32%, transparent);
 }
 
 .destination-icon {
@@ -399,12 +370,12 @@ h1 {
 
 .destination-chips span {
   background: rgb(255 255 255 / 0.8);
-  border: 1px solid rgb(255 143 191 / 0.55);
+  border: 1px solid color-mix(in srgb, var(--svc-color) 45%, transparent);
   border-radius: 999px;
   padding: 5px 12px;
   font-size: clamp(9px, 1vw, 12.5px);
   font-weight: 700;
-  color: var(--deep);
+  color: var(--svc-color);
   white-space: nowrap;
 }
 
@@ -635,10 +606,6 @@ h1 {
 /* Responsive */
 
 @media (max-width: 900px) {
-  .header-tag {
-    display: none;
-  }
-
   .hero {
     padding: 48px 0 36px;
   }
@@ -661,11 +628,20 @@ h1 {
   }
 
   .site-header {
-    padding: 12px 16px;
+    padding: 10px 16px;
+  }
+
+  .logo {
+    font-size: 16px;
+    padding: 6px 16px;
   }
 
   .hero {
-    padding: 40px 0 32px;
+    padding: 24px 0 20px;
+  }
+
+  h1 {
+    font-size: clamp(24px, 6.8vw, 34px);
   }
 
   .hero-accent {
@@ -693,6 +669,7 @@ h1 {
 
   .link-stage {
     width: min(100% - 16px, 1180px);
+    padding: 10px 0 48px;
   }
 
   .destination {
@@ -706,22 +683,7 @@ h1 {
     border-radius: 10px;
   }
 
-  .destination-index {
-    display: none;
-  }
-
-  .destination-tag {
-    font-size: 8px;
-    padding: 4px 8px;
-    letter-spacing: 0.05em;
-  }
-
   .destination-top {
-    justify-content: center;
-  }
-
-  .destination-icon,
-  .destination-index {
     display: none;
   }
 
@@ -793,6 +755,14 @@ h1 {
 
   .site-footer {
     padding: 18px 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .destination-action {
+    font-size: 8px;
+    padding: 7px 8px;
+    letter-spacing: 0.04em;
   }
 }
 
